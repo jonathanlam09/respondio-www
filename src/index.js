@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './app';
+import axios from 'axios';
+
+import * as helper from './helper';
+import { AuthContextProvider } from './context/authContextRedux';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const apiHeader = { 'Content-Type': 'multipart/form-data' };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+global.config = {
+    properties: {
+        baseURL: window.location.origin + '/',
+        assetPath: 'http://localhost:3000/',
+        apiHeader: apiHeader,
+    },
+    methods: helper
+}
+
+axios.defaults.baseURL = 'http://localhost:3000/api';
+axios.defaults.withCredentials = true;
+axios.defaults.headers = apiHeader;
+
+root.render(
+    <React.StrictMode>
+        <AuthContextProvider>
+			<App/>
+        </AuthContextProvider>
+    </React.StrictMode>
+);

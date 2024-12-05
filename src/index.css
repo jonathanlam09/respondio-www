@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body{
+    width: 100vw;
+    height: 100vh;
+    font-family: Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    scrollbar-width: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar{
+    display: none;
+}
+
+.validation-error{
+    border-color: red!important;
+}
+
+.back-btn {
+    background-color: lightgrey;
+    color: white;
+    /* background-color: #FDF4E3; */
+    border: none;
+    border-radius: 1vh;
+}
+
+.action-btn{
+    border: none;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    border-radius: 1vh;
+}
+
+.action-btn:hover{
+    color: white;
+}
+
+.card-shadow{
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.module-header{
+    border-radius: 3vh;
+    background-color: rgba(1, 167, 194);
+    color: white;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.body-content{
+    margin-top: 70px;
+    margin-left: 60px!important; 
+    width: calc(100vw - 60px)!important;
+    max-height: 100vh;
+    position: fixed;
+}
+
+.login-card, .register-card{
+    padding: 20px 50px;
+    border: none;
+    width: 500px;
+    min-width: 250px;
+}
+
+.reset:hover {
+    text-decoration: underline!important;
+    color: blue!important;
+}
+
+.form-control {
+    border: 0px;
+    border-bottom: .1px solid;
+    border-color: lightgrey;
+    border-radius: 0!important;
+}
+
+.form-control:focus {
+    box-shadow: 0;
+}
+
+.login-btn, .register-btn {
+    border: 0px;
+    background-color: cornflowerblue;
+    padding: 5px 10px;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+  
+.modal.fade {
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.modal.fade.show {
+    opacity: 1;
+}
+  
+.modal.fade:not(.show) {
+    opacity: 0;
+}
+
+.action-dt-btn {
+    border: .1px solid black;
 }
